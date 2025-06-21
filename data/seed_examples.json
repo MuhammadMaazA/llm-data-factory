@@ -1,0 +1,72 @@
+[
+  {
+    "ticket_id": "TICKET-001",
+    "customer_message": "I can't log into my account. It keeps saying 'Invalid credentials' even though I'm sure my password is correct. I've tried resetting it twice but still can't access my dashboard. This is urgent as I need to submit a report by end of day.",
+    "category": "Urgent Bug",
+    "priority": "High",
+    "customer_id": "CUST-12345"
+  },
+  {
+    "ticket_id": "TICKET-002",
+    "customer_message": "The mobile app crashes every time I try to upload a photo. I'm using an iPhone 14 with iOS 16.2. The app worked fine last week, but after the latest update, it just closes immediately when I tap the camera button.",
+    "category": "Urgent Bug",
+    "priority": "High",
+    "customer_id": "CUST-67890"
+  },
+  {
+    "ticket_id": "TICKET-003",
+    "customer_message": "I would love to see a dark mode option for the web interface. The current bright theme strains my eyes during late-night work sessions. This would be a great quality-of-life improvement for users like me.",
+    "category": "Feature Request",
+    "priority": "Medium",
+    "customer_id": "CUST-11111"
+  },
+  {
+    "ticket_id": "TICKET-004",
+    "customer_message": "How do I export my data to CSV format? I need to create a backup of all my project files and I can't find the export option in the settings menu. Could you guide me through the process step by step?",
+    "category": "How-To Question",
+    "priority": "Low",
+    "customer_id": "CUST-22222"
+  },
+  {
+    "ticket_id": "TICKET-005",
+    "customer_message": "The payment processing is completely broken. I've been trying to upgrade my subscription for the past hour but keep getting 'Payment failed' errors. My credit card works fine elsewhere, so this must be a system issue.",
+    "category": "Urgent Bug",
+    "priority": "High",
+    "customer_id": "CUST-33333"
+  },
+  {
+    "ticket_id": "TICKET-006",
+    "customer_message": "It would be amazing if you could add integration with Slack. Our team uses Slack for all communication, and being able to receive notifications there instead of email would streamline our workflow significantly.",
+    "category": "Feature Request",
+    "priority": "Medium",
+    "customer_id": "CUST-44444"
+  },
+  {
+    "ticket_id": "TICKET-007",
+    "customer_message": "Can you explain how the team collaboration features work? I want to invite my colleague to work on the same project, but I'm not sure about the permission settings and what they can see or edit.",
+    "category": "How-To Question",
+    "priority": "Low",
+    "customer_id": "CUST-55555"
+  },
+  {
+    "ticket_id": "TICKET-008",
+    "customer_message": "The search function returns completely irrelevant results. When I search for 'invoice', it shows me user profiles and settings pages instead of actual invoices. This makes it impossible to find what I need quickly.",
+    "category": "Urgent Bug",
+    "priority": "Medium",
+    "customer_id": "CUST-66666"
+  },
+  {
+    "ticket_id": "TICKET-009",
+    "customer_message": "I'd like to request a bulk delete feature for managing multiple files at once. Currently, I have to delete files one by one, which is very time-consuming when cleaning up old projects with hundreds of files.",
+    "category": "Feature Request",
+    "priority": "Medium",
+    "customer_id": "CUST-77777"
+  },
+  {
+    "ticket_id": "TICKET-010",
+    "customer_message": "How do I set up two-factor authentication for my account? I want to improve the security of my account but I can't find the 2FA settings in the security section of my profile.",
+    "category": "How-To Question",
+    "priority": "Low",
+    "customer_id": "CUST-88888"
+  }
+]

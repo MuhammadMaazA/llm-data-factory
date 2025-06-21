@@ -1,0 +1,142 @@
+[
+  {
+    "ticket_id": "TEST-001",
+    "customer_message": "The application crashes immediately when I try to open the settings menu. I'm using Windows 11 and this started happening after the latest update. I've tried restarting my computer but the issue persists.",
+    "category": "Urgent Bug",
+    "priority": "High",
+    "customer_id": "TEST-CUST-001"
+  },
+  {
+    "ticket_id": "TEST-002",
+    "customer_message": "I would really appreciate if you could add a feature to export reports in PDF format. Currently, I can only export as CSV or Excel, but my manager requires PDF reports for presentations.",
+    "category": "Feature Request",
+    "priority": "Medium",
+    "customer_id": "TEST-CUST-002"
+  },
+  {
+    "ticket_id": "TEST-003",
+    "customer_message": "Can you help me understand how to set up automated backups? I see there's a backup option in the settings, but I'm not sure what frequency I should use or where the backups are stored.",
+    "category": "How-To Question",
+    "priority": "Low",
+    "customer_id": "TEST-CUST-003"
+  },
+  {
+    "ticket_id": "TEST-004",
+    "customer_message": "The payment gateway is completely broken. I've been trying to process a transaction for the past 30 minutes but keep getting 'Payment failed' errors. My credit card works fine on other sites.",
+    "category": "Urgent Bug",
+    "priority": "High",
+    "customer_id": "TEST-CUST-004"
+  },
+  {
+    "ticket_id": "TEST-005",
+    "customer_message": "It would be great to have a mobile app version of this platform. I often need to check data while on the go, and the current web interface doesn't work well on my phone.",
+    "category": "Feature Request",
+    "priority": "Medium",
+    "customer_id": "TEST-CUST-005"
+  },
+  {
+    "ticket_id": "TEST-006",
+    "customer_message": "How do I change my account password? I can't find the password settings in my profile, and I need to update it for security reasons.",
+    "category": "How-To Question",
+    "priority": "Low",
+    "customer_id": "TEST-CUST-006"
+  },
+  {
+    "ticket_id": "TEST-007",
+    "customer_message": "The search functionality is not working at all. When I search for any term, it returns no results even though I know the data exists. This makes the platform unusable for me.",
+    "category": "Urgent Bug",
+    "priority": "High",
+    "customer_id": "TEST-CUST-007"
+  },
+  {
+    "ticket_id": "TEST-008",
+    "customer_message": "I'd like to request a bulk import feature for user data. Currently, I have to add users one by one, which is very time-consuming when setting up accounts for my entire team.",
+    "category": "Feature Request",
+    "priority": "Medium",
+    "customer_id": "TEST-CUST-008"
+  },
+  {
+    "ticket_id": "TEST-009",
+    "customer_message": "What's the difference between the 'Basic' and 'Premium' subscription plans? I'm trying to decide which one is right for my small business needs.",
+    "category": "How-To Question",
+    "priority": "Low",
+    "customer_id": "TEST-CUST-009"
+  },
+  {
+    "ticket_id": "TEST-010",
+    "customer_message": "The data synchronization is completely broken. Changes I make on one device don't appear on other devices, even after waiting for hours. This is causing major workflow issues.",
+    "category": "Urgent Bug",
+    "priority": "High",
+    "customer_id": "TEST-CUST-010"
+  },
+  {
+    "ticket_id": "TEST-011",
+    "customer_message": "Could you add integration with Google Calendar? It would be very helpful to automatically sync our project deadlines with our team's calendar.",
+    "category": "Feature Request",
+    "priority": "Medium",
+    "customer_id": "TEST-CUST-011"
+  },
+  {
+    "ticket_id": "TEST-012",
+    "customer_message": "How do I invite team members to collaborate on a project? I see there's a 'Share' button but I'm not sure what permissions to give them.",
+    "category": "How-To Question",
+    "priority": "Low",
+    "customer_id": "TEST-CUST-012"
+  },
+  {
+    "ticket_id": "TEST-013",
+    "customer_message": "The notification system is not working. I'm not receiving any email alerts or in-app notifications, even though I have them enabled in my settings.",
+    "category": "Urgent Bug",
+    "priority": "Medium",
+    "customer_id": "TEST-CUST-013"
+  },
+  {
+    "ticket_id": "TEST-014",
+    "customer_message": "I would love to see a dark mode theme option. The current bright interface strains my eyes during late-night work sessions.",
+    "category": "Feature Request",
+    "priority": "Low",
+    "customer_id": "TEST-CUST-014"
+  },
+  {
+    "ticket_id": "TEST-015",
+    "customer_message": "How do I set up two-factor authentication for my account? I want to improve the security of my account but can't find the 2FA settings.",
+    "category": "How-To Question",
+    "priority": "Low",
+    "customer_id": "TEST-CUST-015"
+  },
+  {
+    "ticket_id": "TEST-016",
+    "customer_message": "The API is returning 500 errors for all requests. This is affecting our integration and causing our automated processes to fail.",
+    "category": "Urgent Bug",
+    "priority": "High",
+    "customer_id": "TEST-CUST-016"
+  },
+  {
+    "ticket_id": "TEST-017",
+    "customer_message": "It would be helpful to have a dashboard widget that shows real-time analytics. Currently, I have to manually refresh the page to see updated statistics.",
+    "category": "Feature Request",
+    "priority": "Medium",
+    "customer_id": "TEST-CUST-017"
+  },
+  {
+    "ticket_id": "TEST-018",
+    "customer_message": "Can you explain how the billing cycle works? I'm confused about when I'll be charged and what happens if I exceed my plan's limits.",
+    "category": "How-To Question",
+    "priority": "Low",
+    "customer_id": "TEST-CUST-018"
+  },
+  {
+    "ticket_id": "TEST-019",
+    "customer_message": "The file upload feature is broken. Files larger than 10MB fail to upload with a generic error message, and smaller files sometimes get corrupted.",
+    "category": "Urgent Bug",
+    "priority": "High",
+    "customer_id": "TEST-CUST-019"
+  },
+  {
+    "ticket_id": "TEST-020",
+    "customer_message": "I'd like to request a feature to create custom templates for reports. This would save me a lot of time when generating regular reports for my team.",
+    "category": "Feature Request",
+    "priority": "Medium",
+    "customer_id": "TEST-CUST-020"
+  }
+]
