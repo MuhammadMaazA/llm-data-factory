@@ -1,0 +1,16 @@
+# Core ML/DL
+torch
+transformers
+datasets
+accelerate
+
+# Fine-tuning & Quantization
+trl
+peft
+bitsandbytes
+scikit-learn
+
+# API & App
+openai # or anthropic, google-generativeai
+streamlit
+pandas
