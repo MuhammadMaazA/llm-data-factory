@@ -1,3 +1,10 @@
+# =============================================================================
+# LLM Data Factory - Git Ignore File
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Python
+# -----------------------------------------------------------------------------
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -25,8 +32,30 @@ wheels/
 *.egg
 MANIFEST
 
-# Environments
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# -----------------------------------------------------------------------------
+# Environment Variables & Secrets - CRITICAL: Never commit these!
+# -----------------------------------------------------------------------------
 .env
+.env.*
+!.env.template
 .venv
 env/
 venv/
@@ -34,19 +63,171 @@ ENV/
 env.bak/
 venv.bak/
 
-# Jupyter Notebook checkpoints
-.ipynb_checkpoints
+# Frontend environment files
+frontend/.env
+frontend/.env.*
+!frontend/.env.template
 
-# Model files & large data
-# IMPORTANT: Add any large data files or model checkpoints here
+# API Keys and secrets (extra protection)
+*.key
+*.pem
+*.p12
+*.cert
+*.crt
+secrets/
+config/secrets.json
+api_keys.txt
+
+# -----------------------------------------------------------------------------
+# Machine Learning & AI Models
+# -----------------------------------------------------------------------------
+# Model files - These can be huge!
 *.pt
 *.pth
 *.bin
+*.safetensors
+*.h5
+*.onnx
+*.pkl
+*.joblib
+
+# Model directories
 final_student_model/
 student_model_checkpoint/
-data/synthetic_data.json
+models/
+model_cache/
+checkpoints/
+huggingface_cache/
 
-# IDE / Editor specific
+# Training artifacts
+wandb/
+tensorboard_logs/
+mlruns/
+lightning_logs/
+
+# -----------------------------------------------------------------------------
+# Data Files
+# -----------------------------------------------------------------------------
+# Generated data files
+data/synthetic_data.json
+data/generated_*.json
+data/cache/
+data/temp/
+data/processed/
+data/raw/large_datasets/
+
+# Large data files
+*.csv.gz
+*.json.gz
+*.parquet
+*.feather
+
+# -----------------------------------------------------------------------------
+# Jupyter Notebooks
+# -----------------------------------------------------------------------------
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+.jupyter/
+jupyter_notebook_config.py
+
+# -----------------------------------------------------------------------------
+# Logs and Monitoring
+# -----------------------------------------------------------------------------
+logs/
+*.log
+*.out
+*.err
+log_*.txt
+
+# -----------------------------------------------------------------------------
+# Cache Directories
+# -----------------------------------------------------------------------------
+.cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# -----------------------------------------------------------------------------
+# IDE & Editor Files
+# -----------------------------------------------------------------------------
+# VSCode
 .vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# PyCharm
 .idea/
+
+# Vim
 *.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+
+# -----------------------------------------------------------------------------
+# Operating System Files
+# -----------------------------------------------------------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+.directory
+.Trash-*
+
+# -----------------------------------------------------------------------------
+# Node.js & Frontend (if applicable)
+# -----------------------------------------------------------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn-integrity
+
+# Frontend build directories
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/dist/
+
+# -----------------------------------------------------------------------------
+# Temporary Files
+# -----------------------------------------------------------------------------
+*.tmp
+*.temp
+temp/
+tmp/
+.temporary/
+
+# Node.js dependencies (frontend)
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/dist/
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/

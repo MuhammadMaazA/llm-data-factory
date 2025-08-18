@@ -1,4 +1,4 @@
-# 🤖 llm-data-factory: A Synthetic Data Weaver
+# LLM Data Factory: A Synthetic Data Weaver
 
 This project demonstrates how to use a large, powerful "Teacher" language model (like GPT-4) to generate a high-quality synthetic dataset, which is then used to fine-tune a much smaller, more efficient "Student" language model (like Microsoft's Phi-3-mini).
 
@@ -8,7 +8,7 @@ The goal is to create a specialized, cost-effective classifier for a real-world 
 
 ---
 
-## 🚀 Core Idea & Motivation
+## Core Idea & Motivation
 
 In many real-world machine learning projects, a major bottleneck is the lack of large, high-quality labeled datasets. This project tackles that problem head-on.
 
@@ -23,7 +23,7 @@ This project covers the full AI lifecycle: **Data Scarcity → Data Generation �
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 * **Teacher Model (Data Generation):** OpenAI GPT-4
 * **Student Model (Fine-Tuning):** `microsoft/phi-3-mini-4k-instruct`
@@ -63,7 +63,7 @@ llm-data-factory/
 
 ---
 
-## ⚙️ How to Run This Project
+## How to Run This Project
 
 ### Quick Start
 
@@ -143,7 +143,7 @@ For automated end-to-end training, use our pipeline script:
 
 ```bash
 python run_complete_pipeline.py
-📊 Results & Evaluation
+## Results & Evaluation
 The fine-tuned Student model (phi-3-mini-finetuned) was evaluated on a held-out test set of 200 real customer support tickets.
 
 **Classification Report** *(Results from evaluation.ipynb)*
@@ -163,7 +163,7 @@ phi-3-mini-finetuned (Our Model)	94.0%	~$0.25	3.8B
 Export to Sheets
 As shown, our fine-tuned student model achieves performance remarkably close to the powerful Teacher model but at a fraction of the computational cost, proving the effectiveness of this approach.
 
-## 🚀 Live Demo
+## Live Demo
 
 Check out the interactive demo at: [https://llm-data-factory.vercel.app](https://llm-data-factory.vercel.app)
 
