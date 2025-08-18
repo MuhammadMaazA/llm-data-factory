@@ -1,37 +1,37 @@
 [
   {
     "ticket_id": "TICKET-001",
-    "customer_message": "I'm unable to reset my password using the 'Forgot Password' link. It doesn't send the reset email.",
+    "customer_message": "I cannot log into my account. I keep getting a 'password incorrect' error even though I'm sure my password is right. Can you help reset it?",
     "category": "Authentication",
     "priority": "High",
-    "customer_id": "CUST-123"
+    "customer_id": "CUST-023"
   },
   {
     "ticket_id": "TICKET-002",
-    "customer_message": "The app crashes whenever I try to upload a photo. This happens on both WiFi and mobile data.",
+    "customer_message": "The app crashes every time I try to upload a photo. This started happening after the last update. Please fix this as soon as possible.",
     "category": "Technical",
     "priority": "Critical",
-    "customer_id": "CUST-456"
+    "customer_id": "CUST-045"
   },
   {
     "ticket_id": "TICKET-003",
-    "customer_message": "I was billed twice this month for my subscription. Can you please look into this?",
+    "customer_message": "I received a bill for a service I did not subscribe to. Can you provide more details about this charge?",
     "category": "Billing",
-    "priority": "High",
-    "customer_id": "CUST-789"
+    "priority": "Medium",
+    "customer_id": "CUST-067"
   },
   {
     "ticket_id": "TICKET-004",
-    "customer_message": "It would be great if your service had a dark mode option for the interface.",
+    "customer_message": "It would be great if the application could support exporting data in CSV format. Is this feature planned for the future?",
     "category": "Feature Request",
     "priority": "Low",
-    "customer_id": "CUST-101"
+    "customer_id": "CUST-089"
   },
   {
     "ticket_id": "TICKET-005",
-    "customer_message": "I need assistance with updating my account information. Can someone guide me through the process?",
+    "customer_message": "I'm having trouble finding the FAQ section on your website. Can you guide me to where it's located?",
     "category": "General",
-    "priority": "Medium",
-    "customer_id": "CUST-112"
+    "priority": "Low",
+    "customer_id": "CUST-101"
   }
 ]
