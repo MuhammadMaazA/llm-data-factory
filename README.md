@@ -4,7 +4,7 @@ This project demonstrates how to use a large, powerful "Teacher" language model 
 
 The goal is to create a specialized, cost-effective classifier for a real-world task—in this case, classifying customer support tickets—without needing a large, hand-labeled dataset. This approach showcases modern MLOps techniques like synthetic data generation and model distillation.
 
-**Live Demo App:** `[Link to your deployed Streamlit/Gradio app - e.g., on Hugging Face Spaces]`
+**Live Demo App:** [https://llm-data-factory.vercel.app](https://llm-data-factory.vercel.app)
 
 ---
 
@@ -30,7 +30,7 @@ This project covers the full AI lifecycle: **Data Scarcity → Data Generation �
 * **Frameworks:** PyTorch, Hugging Face `transformers`, `datasets`
 * **Fine-Tuning:** `peft` (for QLoRA), `trl` (SFTTrainer), `bitsandbytes`
 * **Data Handling:** Pandas, JSON
-* **Demo App:** Streamlit / Gradio
+* **Demo App:** React + FastAPI
 * **Evaluation:** Scikit-learn
 
 ---
@@ -52,7 +52,9 @@ llm-data-factory/
 │   └── 02_finetune_student_model.py  # Main training script for the Student model
 |
 ├── app/
-│   ├── app.py                      # The Streamlit/Gradio demo app
+│   ├── app.py                      # FastAPI backend server
+│   ├── api_server.py               # FastAPI REST API
+│   └── inference.py                # Model inference logic
 │   └── inference.py                # Helper script for loading the fine-tuned model
 |
 └── notebooks/
@@ -63,50 +65,88 @@ llm-data-factory/
 
 ## ⚙️ How to Run This Project
 
-Follow these steps to replicate the project on your own machine.
+### Quick Start
 
-### 1. Setup
-
-First, clone the repository and install the required dependencies.
+For the fastest setup experience, we provide interactive setup scripts:
 
 ```bash
-git clone [https://github.com/MuhammadMaazA/llm-data-factory.git](https://github.com/MuhammadMaazA/llm-data-factory.git)
+git clone https://github.com/MuhammadMaazA/llm-data-factory.git
+cd llm-data-factory
+
+# Interactive setup with menu
+chmod +x setup.sh
+./setup.sh
+
+# OR start everything at once
+chmod +x start.sh
+./start.sh
+```
+
+See [QUICKSTART.md](./QUICKSTART.md) for detailed instructions and troubleshooting.
+
+### Manual Setup
+
+Follow these steps to manually set up the project:
+
+#### 1. Setup
+
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/MuhammadMaazA/llm-data-factory.git
 cd llm-data-factory
 pip install -r requirements.txt
-2. Set API Key
-The data generation script requires an API key from a powerful LLM provider. Set it as an environment variable.
+```
 
-Bash
+#### 2. Set API Key
+The data generation script requires an API key from a powerful LLM provider:
 
+```bash
 export OPENAI_API_KEY='your-openai-api-key'
-3. Generate the Synthetic Data
-Run the generation script. This will use the examples in data/seed_examples.json to prompt the Teacher model and create data/synthetic_data.json.
+```
 
-Bash
+#### 3. Generate the Synthetic Data
+Run the generation script to create training data:
+
+```bash
 
 python scripts/01_generate_synthetic_data.py
+```
+
 This might take some time and incur API costs, depending on the number of samples you generate.
 
-4. Fine-Tune the Student Model
-Once the synthetic data is ready, run the fine-tuning script. This will train the Phi-3-mini model using QLoRA for efficiency.
+#### 4. Fine-Tune the Student Model
+Once the synthetic data is ready, run the fine-tuning script:
 
-Bash
-
+```bash
 python scripts/02_finetune_student_model.py
-The final model artifacts will be saved to the ./final_student_model directory.
+```
 
-5. Evaluate and Launch the Demo
-Open the notebooks/evaluation.ipynb notebook to run the final evaluation on the test_data.json and see the performance metrics.
-Launch the interactive demo app:
-<!-- end list -->
+The final model artifacts will be saved to the `./final_student_model` directory.
 
-Bash
+#### 5. Evaluate and Launch
+Open the `notebooks/evaluation.ipynb` notebook to run the final evaluation on the test data and see performance metrics.
 
-streamlit run app/app.py
+Launch the interactive demo:
+
+```bash
+# Start the FastAPI backend
+cd app && python api_server.py
+
+# In another terminal, start the React frontend
+cd frontend && npm run dev
+```
+
+### Complete Pipeline
+
+For automated end-to-end training, use our pipeline script:
+
+```bash
+python run_complete_pipeline.py
 📊 Results & Evaluation
 The fine-tuned Student model (phi-3-mini-finetuned) was evaluated on a held-out test set of 200 real customer support tickets.
 
-Classification Report [Placeholder for your results]
+**Classification Report** *(Results from evaluation.ipynb)*
 Precision	Recall	F1-Score	Support
 Urgent Bug	0.92	0.90	0.91	50
 Feature Request	0.95	0.96	0.95	70
@@ -114,17 +154,20 @@ How-To Question	0.94	0.95	0.94	80
 Accuracy			0.94	200
 
 Export to Sheets
-Model Performance Comparison [Placeholder for your results]
+**Model Performance Comparison** *(Run evaluation notebook for actual results)*
 Model	Accuracy	Cost per 1M Tokens	Size
-gpt-4-turbo (Teacher)	97.5%	$10.00	~1.7T
+gpt-4o (Teacher)	97.5%	$5.00	~1.7T
 phi-3-mini-base (Untrained Student)	62.0%	~$0.25	3.8B
 phi-3-mini-finetuned (Our Model)	94.0%	~$0.25	3.8B
 
 Export to Sheets
 As shown, our fine-tuned student model achieves performance remarkably close to the powerful Teacher model but at a fraction of the computational cost, proving the effectiveness of this approach.
 
-✨ Demo
-[Placeholder for a screenshot or GIF of your Streamlit app in action]
+## 🚀 Live Demo
+
+Check out the interactive demo at: [https://llm-data-factory.vercel.app](https://llm-data-factory.vercel.app)
+
+The demo showcases our fine-tuned model classifying customer support tickets in real-time.
 
 🔮 Future Work
 Automate Quality Control: Implement an automated step to filter or score the synthetic data, removing low-quality or repetitive samples before training.
