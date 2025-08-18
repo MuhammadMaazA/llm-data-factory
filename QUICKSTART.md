@@ -9,7 +9,7 @@ This guide will get you up and running with the LLM Data Factory in just a few s
 - OpenAI API key (for data generation)
 - Git
 
-## 🚀 One-Command Setup
+## One-Command Setup
 
 ```bash
 # Clone and set up everything
@@ -25,10 +25,10 @@ python run_complete_pipeline.py
 ```
 
 This will:
-1. ✅ Generate synthetic training data
-2. ✅ Fine-tune the Phi-3-mini model  
-3. ✅ Run comprehensive evaluation
-4. ✅ Generate performance reports
+1. Generate synthetic training data
+2. Fine-tune the Phi-3-mini model  
+3. Run comprehensive evaluation
+4. Generate performance reports
 
 ## 🌐 Launch the Demo
 
@@ -42,14 +42,14 @@ Then open:
 - **Backend API**: http://localhost:8000
 - **API Docs**: http://localhost:8000/docs
 
-## 📊 View Results
+## View Results
 
 After training, check:
 - `results/evaluation_summary.json` - Performance metrics
 - `results/detailed_predictions.csv` - Prediction details
 - `notebooks/evaluation.ipynb` - Interactive analysis
 
-## 🛠️ Manual Steps (Optional)
+## Manual Steps (Optional)
 
 If you prefer to run steps individually:
 
@@ -68,7 +68,7 @@ python scripts/02_finetune_student_model.py
 cd notebooks && jupyter notebook evaluation.ipynb
 ```
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 **Model not found error?**
 - Run `python run_complete_pipeline.py` to train the model
@@ -81,7 +81,7 @@ cd notebooks && jupyter notebook evaluation.ipynb
 - Set: `export OPENAI_API_KEY='your-key'`
 - Or skip data generation: `python run_complete_pipeline.py --skip-data-generation`
 
-## 📈 Expected Results
+## Expected Results
 
 With the provided seed data, you should achieve:
 - **Overall Accuracy**: ~94%

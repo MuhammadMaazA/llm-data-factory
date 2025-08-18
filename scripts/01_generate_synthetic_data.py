@@ -13,6 +13,10 @@ import os
 import random
 import time
 from pathlib import Path
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 from typing import Dict, List, Optional
 
 import openai
@@ -107,9 +111,25 @@ Here are the example tickets to learn from:
 
 {examples_text}
 
-Generate {self.batch_size} new tickets in the same JSON format as the examples above. Make sure each ticket is unique and realistic. Vary the language, tone, and specific issues described.
+Generate {self.batch_size} new tickets in JSON format. Return a JSON object with a "tickets" array containing the ticket objects. Each ticket object should have these exact fields:
+- ticket_id (string)
+- customer_message (string)
+- category (string)
+- priority (string)
+- customer_id (string)
 
-Return only the JSON array, no additional text:"""
+Example format:
+{{
+  "tickets": [
+    {{
+      "ticket_id": "TICKET-001",
+      "customer_message": "I cannot access my account",
+      "category": "Authentication",
+      "priority": "High",
+      "customer_id": "CUST-001"
+    }}
+  ]
+}}"""
 
         return prompt
     
@@ -120,9 +140,9 @@ Return only the JSON array, no additional text:"""
         for attempt in range(self.max_retries):
             try:
                 response = self.client.chat.completions.create(
-                    model="gpt-4",
+                    model="gpt-4o",  # Use gpt-4o which supports json_object
                     messages=[
-                        {"role": "system", "content": "You are a helpful assistant that generates realistic customer support tickets in JSON format."},
+                        {"role": "system", "content": "You are a helpful assistant that generates realistic customer support tickets in JSON format. Always respond with valid JSON."},
                         {"role": "user", "content": prompt}
                     ],
                     temperature=0.8,
@@ -131,8 +151,14 @@ Return only the JSON array, no additional text:"""
                 )
                 
                 content = response.choices[0].message.content
+                logger.debug(f"Raw response: {content[:200]}...")
+                
+                if not content or not content.strip():
+                    logger.warning("Empty response content")
+                    continue
+                
                 # Handle both array and object responses
-                if content.startswith('['):
+                if content.strip().startswith('['):
                     return json.loads(content)
                 else:
                     data = json.loads(content)
@@ -143,6 +169,9 @@ Return only the JSON array, no additional text:"""
                         for v in data.values():
                             if isinstance(v, list):
                                 return v
+                    elif isinstance(data, dict):
+                        # If it's a single object, wrap it in a list
+                        return [data]
                     else:
                         logger.warning(f"Unexpected response format: {content[:100]}...")
                         return []
@@ -171,21 +200,39 @@ Return only the JSON array, no additional text:"""
     
     def validate_generated_ticket(self, ticket: Dict) -> bool:
         """Validate that a generated ticket meets our requirements."""
-        required_fields = ['ticket_id', 'customer_message', 'category', 'priority', 'customer_id']
+        # Handle different possible field names
+        field_mappings = {
+            'ticket_id': ['ticket_id', 'Ticket ID', 'ticketId', 'ticketID'],
+            'customer_message': ['customer_message', 'Message', 'message'],
+            'category': ['category', 'Category'],
+            'priority': ['priority', 'Priority'],
+            'customer_id': ['customer_id', 'Customer ID', 'customerId', 'customerID']
+        }
         
-        # Check required fields
-        for field in required_fields:
-            if field not in ticket or not ticket[field]:
+        # Normalize the ticket fields
+        normalized_ticket = {}
+        for standard_field, possible_names in field_mappings.items():
+            found = False
+            for name in possible_names:
+                if name in ticket and ticket[name]:
+                    normalized_ticket[standard_field] = ticket[name]
+                    found = True
+                    break
+            if not found:
                 return False
         
+        # Update the original ticket with normalized field names
+        ticket.update(normalized_ticket)
+        
         # Validate category and priority
-        if ticket['category'] not in self.categories:
+        if normalized_ticket['category'] not in self.categories:
             return False
-        if ticket['priority'] not in self.priorities:
+        if normalized_ticket['priority'] not in self.priorities:
             return False
         
         # Validate message length
-        if len(ticket['customer_message']) < 20 or len(ticket['customer_message']) > 1000:
+        message_len = len(normalized_ticket['customer_message'])
+        if message_len < 20 or message_len > 1000:
             return False
         
         return True

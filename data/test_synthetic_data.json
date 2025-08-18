@@ -1,0 +1,37 @@
+[
+  {
+    "ticket_id": "TICKET-001",
+    "customer_message": "I'm unable to reset my password using the 'Forgot Password' link. It doesn't send the reset email.",
+    "category": "Authentication",
+    "priority": "High",
+    "customer_id": "CUST-123"
+  },
+  {
+    "ticket_id": "TICKET-002",
+    "customer_message": "The app crashes whenever I try to upload a photo. This happens on both WiFi and mobile data.",
+    "category": "Technical",
+    "priority": "Critical",
+    "customer_id": "CUST-456"
+  },
+  {
+    "ticket_id": "TICKET-003",
+    "customer_message": "I was billed twice this month for my subscription. Can you please look into this?",
+    "category": "Billing",
+    "priority": "High",
+    "customer_id": "CUST-789"
+  },
+  {
+    "ticket_id": "TICKET-004",
+    "customer_message": "It would be great if your service had a dark mode option for the interface.",
+    "category": "Feature Request",
+    "priority": "Low",
+    "customer_id": "CUST-101"
+  },
+  {
+    "ticket_id": "TICKET-005",
+    "customer_message": "I need assistance with updating my account information. Can someone guide me through the process?",
+    "category": "General",
+    "priority": "Medium",
+    "customer_id": "CUST-112"
+  }
+]
