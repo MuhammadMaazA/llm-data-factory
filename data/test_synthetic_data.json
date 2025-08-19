@@ -1,37 +1,37 @@
 [
   {
     "ticket_id": "TICKET-001",
-    "customer_message": "I cannot log into my account. I keep getting a 'password incorrect' error even though I'm sure my password is right. Can you help reset it?",
+    "customer_message": "I am unable to log into my account even after resetting the password. It keeps saying 'Invalid credentials'.",
     "category": "Authentication",
     "priority": "High",
-    "customer_id": "CUST-023"
+    "customer_id": "CUST-1001"
   },
   {
     "ticket_id": "TICKET-002",
-    "customer_message": "The app crashes every time I try to upload a photo. This started happening after the last update. Please fix this as soon as possible.",
+    "customer_message": "The app crashes every time I try to open it. I have tried reinstalling, but it didn't help.",
     "category": "Technical",
     "priority": "Critical",
-    "customer_id": "CUST-045"
+    "customer_id": "CUST-1002"
   },
   {
     "ticket_id": "TICKET-003",
-    "customer_message": "I received a bill for a service I did not subscribe to. Can you provide more details about this charge?",
+    "customer_message": "I was billed twice for my subscription this month. Can you please look into this?",
     "category": "Billing",
     "priority": "Medium",
-    "customer_id": "CUST-067"
+    "customer_id": "CUST-1003"
   },
   {
     "ticket_id": "TICKET-004",
-    "customer_message": "It would be great if the application could support exporting data in CSV format. Is this feature planned for the future?",
+    "customer_message": "It would be great if the app could send notifications for upcoming deadlines.",
     "category": "Feature Request",
     "priority": "Low",
-    "customer_id": "CUST-089"
+    "customer_id": "CUST-1004"
   },
   {
     "ticket_id": "TICKET-005",
-    "customer_message": "I'm having trouble finding the FAQ section on your website. Can you guide me to where it's located?",
+    "customer_message": "I have a question about how to change my profile picture. Can you guide me?",
     "category": "General",
     "priority": "Low",
-    "customer_id": "CUST-101"
+    "customer_id": "CUST-1005"
   }
 ]

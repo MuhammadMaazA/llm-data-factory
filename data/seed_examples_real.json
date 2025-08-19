@@ -1,21 +1,21 @@
 [
   {
     "ticket_id": "TICKET-001",
-    "customer_message": "Hi, I'm having trouble logging into my account since yesterday. I keep getting an error message saying my credentials are invalid, but I'm 100% sure I'm using the right password. I tried the forgot password link 3 times already but never received any reset emails. Please help ASAP as I have an important client presentation tomorrow and need access to my files.",
+    "customer_message": "I can't log into my account. It keeps saying 'Invalid credentials' even though I'm sure my password is correct. I've tried resetting it twice but still can't access my dashboard. This is urgent as I need to submit a report by end of day.",
     "category": "Authentication",
     "priority": "High",
     "customer_id": "CUST-78291"
   },
   {
     "ticket_id": "TICKET-002",
-    "customer_message": "The application completely freezes when I try to upload documents larger than 10MB. I've tested this on multiple browsers (Chrome, Firefox, Safari) and it happens every time. The upload bar gets to about 60% then the whole browser tab becomes unresponsive. This is blocking my work since I need to upload several large PDF files for my project.",
+    "customer_message": "The application completely freezes when I try to upload documents larger than 10MB. I've tested this on multiple browsers (Chrome, Firefox, Safari) and it happens every time. The upload bar gets to about 60% then the whole browser tab becomes unresponsive.",
     "category": "Technical",
     "priority": "High", 
     "customer_id": "CUST-45823"
   },
   {
     "ticket_id": "TICKET-003",
-    "customer_message": "I was charged twice this month for my Pro subscription. My credit card statement shows two charges of $29.99 on the same day (March 15th). I only have one account and didn't upgrade anything. Can you please refund the duplicate charge? Transaction IDs: TXN-449822 and TXN-449823.",
+    "customer_message": "I was charged twice this month for my Pro subscription. My credit card statement shows two charges of $29.99 on the same day (March 15th). I only have one account and didn't upgrade anything. Can you please refund the duplicate charge?",
     "category": "Billing",
     "priority": "Medium",
     "customer_id": "CUST-92847"
@@ -43,14 +43,14 @@
   },
   {
     "ticket_id": "TICKET-007",
-    "customer_message": "The search function is extremely slow and often returns irrelevant results. When I search for 'quarterly reports' it takes 10+ seconds to load and shows me random documents that don't contain those keywords. This used to work fine but has gotten progressively worse over the past month.",
+    "customer_message": "The search function is extremely slow and often returns irrelevant results. When I search for 'quarterly reports' it takes 10+ seconds to load and shows me random documents that don't contain those keywords. This used to work fine but has gotten progressively worse.",
     "category": "Technical",
     "priority": "Medium", 
     "customer_id": "CUST-85439"
   },
-    {
+  {
     "ticket_id": "TICKET-008",
-    "customer_message": "My subscription was automatically renewed but I cancelled it last month. I have the cancellation confirmation email dated February 18th. Please cancel this charge and confirm my subscription is properly terminated. The charge amount is $49.99 and it appeared on my statement today.",
+    "customer_message": "My subscription was automatically renewed but I cancelled it last month. I have the cancellation confirmation email dated February 18th. Please cancel this charge and confirm my subscription is properly terminated. The charge amount is $49.99.",
     "category": "Billing",
     "priority": "High",
     "customer_id": "CUST-62841"
@@ -85,7 +85,7 @@
   },
   {
     "ticket_id": "TICKET-013", 
-    "customer_message": "I need to update my payment method but the credit card section in billing shows an error. When I click 'Update Card' it says 'Payment processor unavailable'. I need to update this before my next billing cycle tomorrow or my service will be interrupted.",
+    "customer_message": "I need to update my payment method but the credit card section in billing shows an error. When I click 'Update Card' it says 'Payment processor unavailable'. I need to update this before my next billing cycle tomorrow.",
     "category": "Billing",
     "priority": "High",
     "customer_id": "CUST-75264"
@@ -138,20 +138,5 @@
     "category": "General",
     "priority": "Low",
     "customer_id": "CUST-41785"
-  }
-],
-  {
-    "ticket_id": "TICKET-009",
-    "customer_message": "I'd like to request a bulk delete feature for managing multiple files at once. Currently, I have to delete files one by one, which is very time-consuming when cleaning up old projects with hundreds of files.",
-    "category": "Feature Request",
-    "priority": "Medium",
-    "customer_id": "CUST-77777"
-  },
-  {
-    "ticket_id": "TICKET-010",
-    "customer_message": "How do I set up two-factor authentication for my account? I want to improve the security of my account but I can't find the 2FA settings in the security section of my profile.",
-    "category": "How-To Question",
-    "priority": "Low",
-    "customer_id": "CUST-88888"
   }
 ]

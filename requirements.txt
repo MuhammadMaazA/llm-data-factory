@@ -10,6 +10,11 @@ peft>=0.6.0
 bitsandbytes>=0.41.0
 scikit-learn>=1.3.0
 
+fastapi 
+uvicorn 
+python-dotenv openai 
+numpy
+
 # API & App
 openai>=1.0.0
 fastapi>=0.104.0

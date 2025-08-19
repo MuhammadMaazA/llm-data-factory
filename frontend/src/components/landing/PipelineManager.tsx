@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Confetti from "./Confetti";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -16,6 +17,7 @@ const PipelineManager = () => {
   const [isGenerating, setIsGenerating] = useState(false);
   const [isTraining, setIsTraining] = useState(false);
   const [error, setError] = useState<string>("");
+  const [showConfetti, setShowConfetti] = useState(false);
 
   // Poll for status updates
   useEffect(() => {
@@ -31,7 +33,6 @@ const PipelineManager = () => {
               setIsGenerating(false);
             }
           }
-          
           if (isTraining) {
             const status = await apiService.getTrainingStatus();
             setTrainingStatus(status);
@@ -44,6 +45,17 @@ const PipelineManager = () => {
         }
       }, 2000);
     }
+  // Show confetti when both generation and training complete successfully
+  useEffect(() => {
+    if (
+      generationStatus?.status === 'completed' &&
+      trainingStatus?.status === 'completed'
+    ) {
+      setShowConfetti(true);
+      const timeout = setTimeout(() => setShowConfetti(false), 4000);
+      return () => clearTimeout(timeout);
+    }
+  }, [generationStatus?.status, trainingStatus?.status]);
 
     return () => {
       if (interval) clearInterval(interval);
@@ -112,7 +124,8 @@ const PipelineManager = () => {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 relative">
+      {showConfetti && <Confetti />}
       <div className="text-center">
         <h2 className="text-3xl font-bold">ML Pipeline Manager</h2>
         <p className="text-muted-foreground mt-2">
