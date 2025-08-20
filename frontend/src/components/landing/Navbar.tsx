@@ -11,7 +11,6 @@ const Navbar: React.FC = () => {
           <a href="#tech" className="hover:underline">Tech</a>
           <a href="#quickstart" className="hover:underline">Quickstart</a>
           <a href="#demo" className="hover:underline">Demo</a>
-          <a href="#pipeline" className="hover:underline">Pipeline</a>
           <a href="#results" className="hover:underline">Results</a>
           <a href="#faq" className="hover:underline">FAQ</a>
         </div>

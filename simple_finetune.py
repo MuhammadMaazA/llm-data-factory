@@ -140,17 +140,14 @@ class SimpleFineTuner:
     def train(self, dataset, output_dir="./fine_tuned_model"):
         """Train the model."""
         logger.info("Starting training...")
-        
-        # Tokenize datasets
+        # Tokenize datasets, but keep the 'labels' column
         tokenized_dataset = dataset.map(
             self.tokenize_function,
             batched=True,
-            remove_columns=dataset["train"].column_names
+            remove_columns=[col for col in dataset["train"].column_names if col != "labels"]
         )
-        
         # Data collator
         data_collator = DataCollatorWithPadding(tokenizer=self.tokenizer)
-        
         # Training arguments
         training_args = TrainingArguments(
             output_dir=output_dir,
@@ -172,7 +169,6 @@ class SimpleFineTuner:
             learning_rate=2e-4,
             fp16=True,
         )
-        
         # Create trainer
         trainer = Trainer(
             model=self.model,
@@ -183,16 +179,12 @@ class SimpleFineTuner:
             data_collator=data_collator,
             compute_metrics=self.compute_metrics,
         )
-        
         # Train
         trainer.train()
-        
         # Save model
         trainer.save_model()
         self.tokenizer.save_pretrained(output_dir)
-        
         logger.info(f"Training complete! Model saved to {output_dir}")
-        
         return trainer
     
     def evaluate(self, trainer):

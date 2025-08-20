@@ -1,0 +1,67 @@
+{
+  "classification_report": {
+    "Authentication": {
+      "precision": 0.9512195121951219,
+      "recall": 1.0,
+      "f1-score": 0.975,
+      "support": 39.0
+    },
+    "Technical": {
+      "precision": 0.9387755102040817,
+      "recall": 0.8846153846153846,
+      "f1-score": 0.9108910891089109,
+      "support": 52.0
+    },
+    "Billing": {
+      "precision": 0.9534883720930233,
+      "recall": 0.9534883720930233,
+      "f1-score": 0.9534883720930233,
+      "support": 43.0
+    },
+    "Feature Request": {
+      "precision": 1.0,
+      "recall": 0.9814814814814815,
+      "f1-score": 0.9906542056074766,
+      "support": 54.0
+    },
+    "General": {
+      "precision": 0.9074074074074074,
+      "recall": 0.9423076923076923,
+      "f1-score": 0.9245283018867925,
+      "support": 52.0
+    },
+    "accuracy": 0.95,
+    "macro avg": {
+      "precision": 0.950178160379927,
+      "recall": 0.9523785860995163,
+      "f1-score": 0.9509123937392406,
+      "support": 240.0
+    },
+    "weighted avg": {
+      "precision": 0.9504128028808634,
+      "recall": 0.95,
+      "f1-score": 0.949842230977418,
+      "support": 240.0
+    }
+  },
+  "eval_results": {
+    "eval_loss": 0.22983072698116302,
+    "eval_accuracy": 0.95,
+    "eval_runtime": 13.9965,
+    "eval_samples_per_second": 17.147,
+    "eval_steps_per_second": 2.143,
+    "epoch": 3.0
+  },
+  "model_info": {
+    "base_model": "microsoft/phi-3-mini-4k-instruct",
+    "categories": [
+      "Authentication",
+      "Technical",
+      "Billing",
+      "Feature Request",
+      "General"
+    ],
+    "training_data": "data/large_synthetic_data.json",
+    "accuracy": 0.95
+  }
+}
